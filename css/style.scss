@@ -1,0 +1,526 @@
+@import 'reset';
+
+
+$c-brand: #6cb23f;
+$c-brand2: #03724c;
+$c-h: #6cb23f;
+$c-text: #fff;
+$c-gray: #999;
+$c-gray2: #666;
+
+a{
+    text-decoration: none;
+    color: #75b64a;}
+
+@mixin colorhead(){
+    background: #5ba51f;
+    background: -webkit-linear-gradient(#5ba51f, #20770c);
+    background: -o-linear-gradient(#5ba51f, #20770c);
+    background: -moz-linear-gradient(#5ba51f, #20770c);
+    background: linear-gradient(#5ba51f, #20770c);
+}
+
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin order($order) {
+    -webkit-box-ordinal-group: $order;
+    -moz-box-ordinal-group: $order;
+    -ms-flex-order: $order;
+    -webkit-order: $order;
+    order: $order;
+}
+
+button{
+    width: 90px;
+    height: 47px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #4f4f4f;
+    background: linear-gradient(#696969,#4f4f4f);
+    color: $c-text;
+    border: solid 2px #616161;
+    box-shadow: inset 0 1px 0.1px #b7b7b7;
+    font-weight: bold;
+    padding: 0;
+}
+button:focus{
+    outline: 0;
+    
+}
+button:hover{
+    padding-top: 2px;
+}
+
+body{
+    @include flexbox;
+    font-family: sans-serif;
+    height: 100vh;
+    flex-direction: column;
+    background: #1e1e1e;
+    justify-content: center;
+    width: 375px;
+    margin: 0 auto;
+    background: #1e1e1e; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(circle, #666, #1e1e1e, #1e1e1e); /* Safari */
+    background: -o-radial-gradient(circle, #666, #1e1e1e, #1e1e1e); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, #666, #1e1e1e, #1e1e1e); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, #666, #1e1e1e, #1e1e1e); /* Standard syntax */
+}
+.body-w{
+    background:#fff;
+}
+header{
+	@include colorhead;
+	height: 52px;
+    font-size: 22px;
+    color: $c-text;
+    @include flexbox;
+    align-items: center;
+    position: relative;
+
+    .icon-l{
+        color: white;
+        margin-left: 24px;
+        position: absolute;
+        top: 20px;
+        font-size: 14px;
+        img{
+            width: 10px;
+        }
+    }
+    .icon-r{
+        color: white;
+        margin-right: 24px;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        font-size: 14px;
+    }
+    p{
+        width: auto;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+.content{
+    @include flexbox;
+    flex-grow: 1;
+    flex-direction: column;
+}
+.advertising{
+    width: 100%;
+    height: 94px;
+    padding: 10px 12px 10px 24px;
+    box-sizing: border-box;
+    background: rgba(60,78,48,0.6);
+
+    .ads-l{
+        float: left;
+        .ads-l-1{
+            .ads-l-1-l{
+                float: left;
+                h1{
+                    color: $c-brand;
+                    font-weight: bold;
+                    font-size: 18px;  
+                }
+                h2{
+                    color: $c-text;
+                    font-weight: bold;
+                    font-size: 14px;  
+                }
+            }
+            .level{
+                float: right;
+                font-size: 36px;
+                color: $c-brand;
+                text-align: center;
+            } 
+        }
+        p{
+            padding-top: 8px;
+            color: $c-gray;
+            font-size: 12px;
+            clear: both;
+        }
+    }
+    .ads-r{
+        float: right;
+        button{
+            margin-top: 10px;
+        }
+    }
+   
+   
+}
+.wrap-card{
+    width: 310px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.card{
+        @include flexbox;
+        width: 302px;
+        height: 187px;
+        border-radius: 8px;
+        margin: 0 auto;
+        margin-top: 18px;
+        img{
+            width: 100%;
+        }
+        
+    }
+    .card-circle{
+            position: absolute;
+            right: -10px;
+            top: 140px;
+            width: 76px;
+            border-radius: 100%;
+            box-shadow: 0 0 10px #aaa;
+            img{
+                width: 100%;
+            }
+        }
+
+input{
+    
+    height: 20px;
+    border: none;
+}
+input:focus{
+    outline: 0;
+}
+.addcard-input-1{
+    width: 190px;
+    position: absolute;
+    top: 80px;
+    left: 90px;
+}
+.addcard-input-2{
+    width: 110px;
+    position: absolute;
+    top: 120px;
+    left: 90px;
+}
+
+.cup-spin{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+
+    img{
+        width: 60px;
+    }
+    p{
+        color: white;
+        margin-top: 20px;
+    }
+}
+
+@keyframes rotating {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+.rotating {
+    animation: rotating 2s linear infinite;
+}
+
+.con-card{
+    .card-detail{
+        @include flexbox;
+        margin: auto;
+        height: 84px;
+        box-sizing: border-box;
+        align-items: center;
+        padding-left: 24px;
+        padding-right: 24px;
+        justify-content: space-between;
+        flex-direction: row;
+        .card-detail-l{
+            font-weight: bold;
+            color: $c-text;
+            line-height: 24px;
+            .card-money{
+                font-size: 18px;
+            }
+            .card-datetime{
+                font-size: 13px;
+            }
+        }
+        .card-detail-r{
+            line-height: 24px;
+            text-align: right;
+            color: $c-brand;
+        }
+    }
+}
+
+.card-btn{
+    margin: 0 auto;
+    button{
+        float: left;
+        margin: 0 19px;
+    }
+}
+
+
+
+
+.redeem{
+    height: 134px;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 12px;
+    margin: 0 auto;
+
+    .redeem-cup{
+        height: 37px;
+        float: left;
+        margin-right: 8px;
+        img{
+            height: 100%;
+        }
+    }
+    .redeem-r{
+        float: left;
+        .redeem-text{
+            color: $c-gray2;
+            margin-bottom: 6px;
+        }
+        .redeem-rod{
+            width: 250px;
+            height: 17px;
+            background:#b7b7b7;
+            margin-bottom: 2px;
+            .redeem-rod-1{
+                width: 8.33%;
+                height: 100%;
+                background: #95875a;
+            }
+        }
+        .redeem-count{
+            color: $c-gray;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    .redeem-filter{
+        clear: both;
+        width: 120px;
+        border-radius: 100px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        background:red;
+        height: 30px;
+        background: #888787;
+        border-bottom: solid 1px #616161;
+        box-shadow: inset 0 1px 0.1px #b7b7b7;
+        box-sizing: border-box;
+
+        .filter-l{
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            width: 60px;
+            text-align: center;
+            color: white;
+        }
+        select{
+            background: none;
+            width: 60px;
+            height: 30px;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            border: none;
+            float: left;
+            option{
+                color: black;
+            }
+        }
+        select:focus{
+            outline: 0;
+        }
+    }
+    .redeem-comment{
+        clear: both;
+        color: $c-gray2;
+    }
+}
+.line{
+    width: 100%;
+    height: 2px;
+    background: $c-brand;
+    margin: 0 auto;
+}
+
+.reward{
+    height: 203px;
+    width: 310px;
+    text-align: center;
+    padding-top: 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    .reward-cup{
+        margin: 0 auto;
+        height: 100px;
+        margin-bottom: 20px;
+        img{
+            height: 100%;
+        }
+    }
+    .reward-text{
+        color: $c-brand2;
+    }
+}
+
+.contact{
+    padding-top: 18px;
+    width: 310px;
+    margin: 0 auto;
+    color: $c-gray;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.transaction{
+
+}
+.card-transaction{
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-right: 12px;
+    width: 155px;
+    height: 96px;
+    background: red;
+    border-radius: 4px;
+    float: left;
+    img{
+        width: 100%;
+    }
+}
+.card-trans-info{
+    margin-top: 40px;
+    float: left;
+    p{
+        color: $c-brand;
+        margin-bottom: 8px;
+        font-size: 13px;
+    }
+    h1{
+        font-size: 28px;
+        color: $c-text;
+    }
+}
+.transaction-title{
+    height: 43px;
+    text-align: center;
+    clear: both;
+    line-height: 43px;
+    color: $c-brand;
+}
+.transaction-list{
+    margin: 0 10px;
+    background: #fff;
+    border-radius: 4px;
+    height: 373px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 16px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    
+    .tarnsaction-list-item{
+        height: 12.5%;
+        line-height: 46px;
+        .list-item-l{
+            float: left;
+            font-size: 22px;
+            font-weight: bold;
+            width: 125px;
+        }
+        .list-item-c{
+            float: left;
+            font-size: 16px;
+            width: 55px;
+            text-align: center;
+        }
+        .list-item-r{
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+
+            .red{
+                color: red;
+            }
+            .green{
+                color: $c-brand;
+            }
+        }
+    }
+}
+.transaction-list::-webkit-scrollbar-track
+    {
+        background-color: none;
+    }
+
+    .transaction-list::-webkit-scrollbar
+    {
+        width: 3px;
+        height: 5px;
+        background-color: rgba(255, 255, 255,0.1);
+        border-radius: 100px;
+
+    }
+
+    .transaction-list::-webkit-scrollbar-thumb
+    {
+        background-color: $c-gray;
+        cursor: pointer;
+    }
+
+
+.menubar{ 
+    height: 67px;
+    background: #2a2a2a;
+
+    .active{
+        color: white;
+    }
+}
+.menu{
+    width: 20%;
+    color: #999;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    float: left;
+    height: 100%;
+    img{
+        width: 40px;
+        max-height: 40px;
+        margin-top: 8px;
+    }
+    p{
+        width: 100%;
+        position: absolute;
+        bottom: 4px;
+    }
+}
